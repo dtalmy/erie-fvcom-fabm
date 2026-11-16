@@ -142,6 +142,7 @@
   .popout .close { font-size: 1.6rem; line-height: 1; background: none; border: 0; color: var(--muted); cursor: pointer; }
   .popout-body { overflow: auto; background: #ffffff; }
   .popout-body img { display: block; width: 100%; min-width: 900px; height: auto; }
+  .popout-body img.narrow { min-width: 0; max-width: 900px; margin: 0 auto; }
   .popout-cap { padding: 0.75rem 1rem 1rem; color: var(--muted); font-size: 0.9rem; max-width: none; }
 </style>
 
@@ -258,7 +259,8 @@
         about 0.9 per day at 0 °C, three to four times faster than cultured freshwater diatoms grow near freezing. Silica is not the cause, because the observations show enough silica to
         sustain diatom growth. Second, the model misses the extent of the summer cyanobacteria bloom. Its summer
         nutrients are not used up, so something else holds the cyanobacteria back. Grazing is one explanation:
-        modeled zooplankton in the western basin are two to three times higher than observed. The model also lacks
+        <button type="button" class="linklike" data-open="dlg-zoo">modeled zooplankton in the western basin are two to three
+        times higher than observed</button>. The model also lacks
         many of the adaptations of <i>Microcystis</i>, such as buoyancy regulation; its cyanobacteria rise at a fixed speed.
         CO<sub>2</sub> limitation cannot be the cause in the model, because the model does not yet include carbon;
         it can be extended to do so.
@@ -277,6 +279,20 @@
     representation of light harvesting by rhodopsins, which may matter for diatoms under the ice.
   </p>
 </main>
+
+<dialog id="dlg-zoo" class="popout" aria-label="Zooplankton, model and observations">
+  <div class="popout-head">
+    <strong>Zooplankton, model and observations</strong>
+    <button type="button" class="close" data-close aria-label="Close">×</button>
+  </div>
+  <div class="popout-body">
+    <img class="narrow" src="media/zoo_model_vs_obs.png" alt="Depth-averaged zooplankton by basin, model 2025–26 against GLNPO spring and summer cruises 1997–2018">
+  </div>
+  <p class="popout-cap">
+    Orange: model basin-mean zooplankton, averaged over depth. Black: U.S. EPA GLNPO spring and summer cruises,
+    1997–2018 (dot: median; thick bar: middle 50%; thin line: 10–90%).
+  </p>
+</dialog>
 
 <dialog id="dlg-rivers" class="popout" aria-label="River inputs to the model">
   <div class="popout-head">
